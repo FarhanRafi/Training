@@ -91,10 +91,10 @@ namespace Day3
             // 3. (i)
             List<Address> addressBook = new();
 
-            addressBook.Add(Part3.ConstructAddressbook(addressBook, "Akib", new string[] { "Mirpur", "Dhanmondi", "Siddheswari"}));
-            addressBook.Add(Part3.ConstructAddressbook(addressBook, "Sajeeb", new string[] { "Lalmatia"}));
-            addressBook.Add(Part3.ConstructAddressbook(addressBook, "Niloy", new string[] { "Puran Dhaka", "Rajarbag" }));
-            addressBook.Add(Part3.ConstructAddressbook(addressBook, "Ratul", Array.Empty<string>()));
+            Part3.ConstructAddressbook(addressBook, "Akib", new string[] { "Mirpur", "Dhanmondi", "Siddheswari"});
+            Part3.ConstructAddressbook(addressBook, "Sajeeb", new string[] { "Lalmatia"});
+            Part3.ConstructAddressbook(addressBook, "Niloy", new string[] { "Puran Dhaka", "Rajarbag" });
+            Part3.ConstructAddressbook(addressBook, "Ratul", Array.Empty<string>());
 
             Console.WriteLine(addressBook);
 

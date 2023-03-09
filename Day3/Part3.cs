@@ -92,25 +92,25 @@ namespace Day3
         public static Address ConstructAddressbook(List<Address> addressBook, string key, string[] strings)
         {
             int keyCount = addressBook.Count;
-            //var address = new Address { Name = new Dictionary<string, string>() { $"Individual {++keyCount}", key} };
-            var address = new Address() { };
-            address.Name.Add($"Individual {++keyCount}", key);
+
+            Dictionary<string, string> addressInit = new();
+            Dictionary<string, string> name = new() { { $"Individual {++keyCount}", key } };
 
             for (int i = 0; i < strings.Length; i++)
             {
-                Console.WriteLine($"{strings[i]}"); 
-                Console.WriteLine($"Address {i + 1}"); 
-                address.Addresses.Add($"Address {i+1}", $"{strings[0]}");
+                addressInit.Add($"Address {i+1}", $"{strings[0]}");
             }
-            addressBook.Add(address);
 
+            var address = new Address { Name = name, Addresses = addressInit };
+            addressBook.Add(address);
             return address;
         }
     }
 
     public class Address
     {
-        public Dictionary<string, string> Name { get; set; }
-        public Dictionary<string, string> Addresses { get; set; }
+        public IDictionary<string, string> Name { get; set; }
+
+        public IDictionary<string, string> Addresses { get; set; }
     }
 }
